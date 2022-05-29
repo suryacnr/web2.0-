@@ -1,0 +1,17 @@
+Dom based vulnerability
+	DOM-based vulnerabilities arise when a website contains JavaScript that takes an attacker-controllable value, known as a source, and passes it into a dangerous function, known as a sink. 
+Taint Flow vulnerability
+	mosed commen dom based vul can be traced by cliend side code manuplatation
+What is Taint Flow vulnerability ?
+	To familarise with vulnerability to attck or manupilate you have to familarise with sources and sink
+Sources:
+	is a java script property which accept the data which attacker potentialy control
+	eg:location.search because it reads the input from string which can simple an attcker can control. The property can control by the attacker is called sources
+sinks:
+	Is Potantialy dangurase java script or Dom object.that can casues  an understanble effects in attacker control the data is pause to it 
+	eg:eval functation is sink coz it process the argument and pass it to java script
+	An example of an HTML sink is document.body.innerHTML 
+fundamentaly dom based arrices when website pass the data from  sources to sink
+which handle the data from unsafe way
+
+The most coman sources is url,which typecaly accept the location object

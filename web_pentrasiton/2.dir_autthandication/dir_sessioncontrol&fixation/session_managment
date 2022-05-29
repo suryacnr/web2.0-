@@ -1,0 +1,59 @@
+after login if you navigate to differant page without login  for this website uses cookie for user friendlyness of the website
+the cookie is set by the server and send it to client the client will talk with only the cookie untill it expiress the cookie send to server what the user is permintated and what type of accation is done this will be only mainted by the cookie
+
+Usually the main steps of the attack pattern are the following:
+
+    cookie collection: collection of a sufficient number of cookie samples;
+    cookie reverse engineering: analysis of the cookie generation algorithm;
+    cookie manipulation: forging of a valid cookie in order to perform the attack. This last step might require a large number of attempts, depending on how the cookie is created (cookie brute-force attack
+
+
+cookie collection 
+
+how many cookie are used by the application note when the cookie is created make list of received cookie
+
+which part of application genrate and modefy the cookie
+find which cookie remain constant and which  modefy the cookie  
+
+which part of application requires cookie in order to access and utilize
+find out which part of application needs cookie accwess page and try to access without the cookie or with modefyed cookie .try to map which cookie is used where 
+
+session analysis:
+The session tokens (Cookie, SessionID or Hidden Field) themselves should be examined They should be tested against criteria such as their randomness, uniqueness, resistance to statistical and cryptographic analysis and information leakage.
+
+examin the session id provided by the application
+
+Having analyzed a single session token, the representative sample should be examined. A simple analysis of the tokens should immediately reveal any obvious patterns. For example, a 32 bit token may include 16 bits of static data and 16 bits of variable data. This may indicate that the first 16 bits represent a fixed attribute of the user – e.g. the username or IP address. If the second 16 bit chunk is incrementing at a regular rate, it may indicate a sequential or even time-based element to the token generation. See examples. 
+if you find static element in token than you can find more samples
+
+The following areas should be addressed during the single and multiple Session ID structure testing:
+
+    What parts of the Session ID are static?
+    What clear-text confidential information is stored in the Session ID? E.g. usernames/UID, IP addresses
+    What easily decoded confidential information is stored?
+    What information can be deduced from the structure of the Session ID?
+    What portions of the Session ID are static for the same log in conditions?
+    What obvious patterns are present in the Session ID as a whole, or individual portions?
+
+session id predictability and randamization:
+
+
+
+
+session token is important but how do we track them
+typically a session token id passed to from the client
+popular method for tracking state are :
+cookies
+url parameters
+hidden form field 
+as tester we need to evaluate these tokens 
+session token is major target
+multiple tools are used to attack session
+ intracting proxies provide access to session
+ script to brute force session ids
+changing session id cans:
+    giving attacker acess as some one else
+    disclose senstive information
+    evaluate attacker privalege 
+
+	

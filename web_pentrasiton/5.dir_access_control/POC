@@ -1,0 +1,21 @@
+To test access control we need three things session box , autrize , auto repeter 
+creat 2 or 3 account for the website and login with session box with temprevery session 
+how to attack using authmatris
+first go to vitcum and search for profile fedback  and saved and addto card etc in proxy and http history select profile and send to authmatris like wise send others also 
+in authmatris and new user name it as attacker now go to attacker website and get the cookie  or authrisation bearer  from https history and now just hit run
+
+check for endpoint 
+like creat read update and delet function
+test the main apps little used fetures
+		forum
+
+crud forms section, crud posts,crud user,account info,crud replies 
+			forms 
+chat room, bot functionality, invites, vedio sharing
+
+look for weridness
+eg : put you cant see put request instant they use post request
+
+decode for ids with cyberchef 
+you can use magic settings
+bypass prodection 

@@ -1,0 +1,2 @@
+natas23
+try to fuzz like this eg: GET /?password$$=$$test ==> try to fuzz the phpfuzz list 

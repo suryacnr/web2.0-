@@ -1,0 +1,28 @@
+1.in this challange we should triger xss in  webapp using only dev tools.
+2.search in debbuger and in debbuger search for java script files and css files and index file  
+3.than go for networking and refresh the page than  serach for csp(contant-seurity-policy)
+4.if you dont now about csp  just go to google and search for csp evaluator this will give information csp than past csp 
+5.you check what is vunlerable it will be higlited in red and orange colour and  default as self ==>is nothing but self xss vulnerable
+6.accourding to csp if java script is in server side it will execute if java script is some where in script tag or in even handler  it will not 
+execut or resources must be in the page its self
+7.you should play with console type alert('xss'); it execute self xss   
+8. the self xss help as to  bypass the csp 
+now try to inject the code like this 
+var web ="https://paytm.com/config.min.js";==> this should be some javascript file its compulsary and it may be css file but you will not get csp
+bypass error
+var web ="https://www.mazzady.com/js/country.js";
+var cspbypas ='<script> src="${web}"</script>';
+document.write(cspbypas);
+if you get error its must be regarding javascript error actualy thats nice thing
+9.if you can execut the inline script like this you cant attack xss
+
+var cspbypas ='<script> alert(xss)</script>';
+document.write(cspbypas);
+
+10.you should play with web page and find wich part is dynamic and play with that and try to cause un expected begaviear eg: if there is 1 to 10 id
+in url try to change it to 100 or 50 you may get error 404 50 file doesnt exit | in this the 50 is reflecting so try to inject the xss code but they 
+may use fiters open the file in new tap if some thing is wired your on the right track 
+11.insert the 404 error in console if you dont get error its valid java script
+12.now try to use ' or double quotos at the end of the string in the url and past in the console there you will get the error thats nice one going on
+eg: https://paytm.com/hellostock" +404+' orhttps://paytm.com/hellostock" -alert(0)-"
+now you will get xss if your in right track but it still self xss but its proves that we inject xss and but its not html injection 

@@ -1,0 +1,13 @@
+
+java -noverify -Xbootclasspath/p:burp-loader-keygen-2_1_07.jar -jar burpsuite_pro_v2020.7.jar
+
+jre1.8.0_261/bin/java  -noverify -Xbootclasspath/p:burp-loader-keygen-2_1_07.jar -jar burpsuite_pro_v2020.7.jar
+
+
+jre1.8.0_261/bin/java -jar -Xmx4G burp-loader-keygen-2_1_07.jar
+
+
+root@localhost:/opt/jdk-14.0.1#   .
+root@localhost:/opt/jdk-14.0.1# update-alternatives --install /usr/bin/java java /opt/jdk-14.0.1/bin/java 1   .
+root@localhost:/opt/jdk-14.0.1# update-alternatives --install /usr/bin/javac javac /opt/jdk-14.0.1/bin/javac 1   .
+root@localhost:/opt/jdk-14.0.1# update-alternatives --set javac /opt/jdk-14.0.1/bin/javac   .

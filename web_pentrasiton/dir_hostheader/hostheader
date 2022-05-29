@@ -1,0 +1,28 @@
+host header attack it is coman practize that same server to host several websites or webapplication to run on same ip .the host header only specify
+which website should proces an incoming http request if we specify invalid host header if it is vulnerable it may be redirect to that ip addreas
+
+go to proxy in that if you intersept that the traffic  in that there will be get or post request underthat host:example.com if you can change that 
+there is vulnerable 
+
+there are three ways to attack the host header attack 
+find the status code that 200  or 300 status code in burp
+1.first method to find host header is 
+change the real host to bing.com
+
+2. mehtod to find host header attack
+change the real host to bing.com
+set X-Forwarded-Host: to realweb.com
+
+
+3. method to find host header attack
+change the bing.com to real host
+set X-Forwarded-Host: to bing.com 
+
+host header attack using redirection 
+just try on host: example.com 
+and the resonces code in that serach for bing.com if you find than the link maybe click able anywhere in the page 
+if not there may be xss or this is webcacha posining web cacha posining
+
+host header attack using xss 
+just try on host :example.com <script>alert('w')</script>
+and the resonces code in that serach for bing.com open in browser

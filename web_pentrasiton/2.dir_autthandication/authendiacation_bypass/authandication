@@ -1,0 +1,26 @@
+authentication means entring into confrances without the  pass is called broken authentication
+autherization means each users as seprate privilages like principle and staff and children
+
+1.what is authentication 
+there are three factors of authentication :
+some you now like password or security questions 
+some you have like physical objects like mobile number or security question
+something  you are do, for eg biomatric are patern begavior
+
+2.the differ between autentication are authrosization 
+Authentication is the process of verifying that a user really is who they claim to be, eg: really to check who the owner is
+whereas authorization involves verifying whether a user is allowed to do something. eg: like delet account or view information of others
+
+3.how do vulnerability arise?
+ Broadly speaking, most vulnerabilities in authentication mechanisms arise in one of two ways:
+
+ The authentication mechanisms are weak because they fail to adequately protect against brute-force attacks.
+ Logic flaws or poor coding in the implementation allow the authentication mechanisms to be bypassed entirely by an attacker. 
+ This is sometimes referred to as "broken authentication"
+
+4.mainly we are going to look into three types are:
+   Vulnerabilities in password-based login
+   Vulnerabilities in multi-factor authentication
+   Vulnerabilities in other authentication mechanisms
+
+	

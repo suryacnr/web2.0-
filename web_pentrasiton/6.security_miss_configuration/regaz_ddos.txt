@@ -1,0 +1,6 @@
+simple regaz =/A(B|C+)+D/
+ A ==> starts with a
+ b|c ==> process with b(after a the string shold have b or the multiple accurances of c)
+ + ==> which indecte multiple of b or c 
+ d ==> endes with d
+ 

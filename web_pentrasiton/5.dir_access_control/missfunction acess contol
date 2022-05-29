@@ -1,0 +1,20 @@
+user with network access can send request to server 
+https://example.com/app?id = config
+an attacker can simply change the url parameterto reach an unauthrized functionality  and grand them with access priviliage  the function 
+https://example.com/app?admin=control
+in this attack you should  follow chris youtube vedio that how he fuzz for this 
+
+in websites ther are  different funnctionality for authendicated and unauthendicated users we as pentester we have crose check for unothedicated user to check for function or profiles only where  which authendicted user only can access 
+attack 
+to check just open two browser and access with login  and go to setting and dashbord and try to access that url in another browser
+
+
+first go to authorize and
+ enter the cookie value of attacker  and authrise bearer if any
+ and go to interspetion filters in that only http methond and your methods eg POST or PUT or GET becouse it may generate more trafice
+
+
+ enforcement  detector  go to status equal numer 
+ 403 ==> it means it doesnt suffer from broken access control
+  
+

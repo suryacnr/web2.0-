@@ -1,0 +1,51 @@
+YOu should not be focusing only on one thing information disclouser can leek in all kind of flace so it important to not to miss anything later you will find often sensetive date will testing for something they skill is to recoganize intresting information 
+
+'''some of the tool can be used for information discloser'''
+1.fuzzing
+2.burp scanner
+3. burp engagment tools 
+4.enginnering information respoce
+
+
+common source of information discloser 
+
+1.file for web crawler :
+many file provide at /robots.txt and /sitemap.xml help to navigate their site and some help to skip some file and directory should not be seen my crawler try to navigate manually 
+
+2.directry listings:
+ Web servers can be configured to automatically list the contents of directories that do not have an index page present. This can aid an attacker by enabling them to quickly identify the resources at a given path, and proceed directly to analyzing and attacking those resources.
+ directry listing them self is not security vulnerability but access control fail to implemnt porperly. in this way it clearly an issue
+
+3.Devloper comments:
+during devlopment, in-line html comments are added sometimes these must be striped after production. however comments are missed are forgotten .although these comments are not rendered in webpage but they may be easily accessed by burp or dev tools 
+
+ to solve this lab go to site map right click engagment tools and you can see find comments 
+
+4 Error message 
+  one of the most commen causes of information disscloser is verbal error message
+  you should closely check all kind of error message you encountr
+
+5. debugging data :
+	for debugging purpuse many website contain custome error message and log file that contain large ammount information about the application behavior .This information is usefull for dev but also usefull for hackers.
+	 Debug messages can sometimes contain vital information for developing an attack, including:
+
+    *Values for key session variables that can be manipulated via user input
+    *Hostnames and credentials for back-end components
+    *File and directory names on the server
+    *Keys used to encrypt data transmitted via the client
+6. User account page:
+	A user's profile "My Account" page contain sensitive information like email phone no api keys etc 
+	some website contain logic flows this potentialy allows an attacker to leverage to view other users information
+
+	GET /user/personal-info?user=carlos
+	most website will take steps to prevent the parameter to change the user.but sometimes the logic for loading individual items of data is not as robust.
+7. Source code disclosure via backup files
+	Obtaining source code access makes it much easier for an attacker to understand the application's behavior and construct high-severity attacks.sensitive data can be hardcoded if you can find open source technology is being used. this provide easy access to a limint amount of source code
+	''' When a server handles files with a particular extension, such as .php, it will typically execute the code, rather than simply sending it to the client as text.'''to trick the server the you can simply append tild (~) to read the page
+8. Information disclosure due to insecure configuration
+	 In Burp Repeater, browse to GET /admin. The response discloses that the admin panel is only accessible if logged in as an administrator, or if requested from a local IP. Send the request again, but this time use the TRACE method:
+	TRACE /admin 
+	Go to "Proxy" > "Options", scroll down to the "Match and Replace" section, and click "Add". Leave the match condition blank, but in the "Replace" field, enter X-Custom-IP-Authorization: 127.0.0.1. Burp Proxy will now add this header to every request you send. 
+
+9.
+

@@ -1,0 +1,45 @@
+1.in proxy go to settings and enable  auto scrole to match when text changes these will be helpfull for finding xss
+2.in target go to scope and enable adavance scope and add in host or ip range: *example*
+3.in target fo to sitemap and in filters enable show only in scope and remove empty files and enable 4x 
+4.in site and right and go to engmanet tools in that go to discover contant and go to config and remove recursve subdirectory
+5.than use burp colabrater go to burp and click burp colabrater  than click copy to clipbord
+6.in cyberchef you can use entropy and detact file type for cookie value 
+7.in intruder you can go to postion and change the payload type to bit slipper to attack cookie value
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+start up disable extenstion
+project option: configuration and settings that apply to what you are hacking 
+user options : configuration and settings that apply to burp 
+
+project options == http == redirect == javascript enable 
+project options == misc == burpcolobrater ==
+project options == session == session handling/cookiejar/macros == 
+usr option == display == usr/interface/http message display
+usr option ==misc == hotkeys shortcut 
+usr option == misc == proxy intersiption 
+
+what is this option for 
+for that you can use ? for documentation
+burp ==usr option ==save usr options  for later options 
+target ==scope == advance scope with regs ==\.yeswehack\.com$
+target == socpe == advance scope with regs ==.*?yeswehack.com$
+target == scope == exclude frrom scope == ^www\.yeswehack\.com$
+target == sitemap == engagment tools == find referance 
+target == sitemap == engagment tools == simulate manual testing
+proxy == http history == highlight for later use == filter == show only comment items ,show only highlited items
+proxy == option == match and replace
+intruder postions == add insetion point == right click send to define insertion point
+intuder == attacke results ==remove base line request/uncheck unmodefied base line 
+intruder == if you no want to expect, use ==grep match 
+intruder == if you dont no want to expect use == grep extrect
+dcode as limited use hackvertor 
+
+
+
+
+
+
+
+ systemctl restart bluetooth

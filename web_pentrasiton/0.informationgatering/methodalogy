@@ -1,0 +1,29 @@
+first use sublist3r and find subdomin in that site and or you can use crt.sh website to find subdomin you have to extract that using curl 
+sublist3r -v  -d mazzady.com
+so you have to find which domin is active and which is down
+for that use httproc.py
+than use dirb 
+dirb https://www.mazzady.com/
+
+eg: curl -k -i 'https://paytm.com/?q=%25paytm.com/' | http2text > domin.txt
+after that in that file you have to extract only subdomin
+eg: cat domin.txt | grep paytm.com | cut or use awk -F '{print $5}' | sort -u
+cat httprocout.txt | awk '/https/ {print}' to print only http urls
+after that see what website is up 
+eg: you use my tool called httpscorn and ok responces code 
+or you can use for loop like this for i in $(cat domain.txt) ; do curl -s -o /dev/null -I -w "%{http_code}" https://$site --max_time 5; 
+printf " -$site \n" & done > alive.txt
+
+than you will get which is 200 ok code or not 
+after that you can use eyewitness to take screenshot 
+
+eyewitness  -f/root/domin.txt -d --all-protocal
+after that find any api.paytm.com and get the ip address
+
+use nmap -sC -sV -oA -T4 nmap 127.0.0.1 
+use dirb https://www.mazzady.com -r -o tmp.dir
+
+use searchsploit *tornet_sploit*
+searchsploit -x rmote
+intersept the login detail and copy the raw data from burp and save it as file and run for sqlmap 
+like sqlmap -r login.req --level 5 --risk 3

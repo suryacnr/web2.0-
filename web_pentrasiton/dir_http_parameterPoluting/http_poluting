@@ -1,0 +1,29 @@
+HTTP Parameter Pollution, or HPP, occurs when a website accepts input from a user and
+uses it to make an HTTP request to another system without validating that user’s input.
+amount=1000&fromAccount=12345&toAccount=99999
+A site vulnerable to an HPP attack would forward the request to the other back end
+system looking like:
+toAccount=9876&amount=1000&fromAccount=12345&toAccount=99999
+HTTP Parameter Pollution
+18
+<? $val=htmlspecialchars($_GET['par'],ENT_QUOTES); ?>
+<a href="/page.php?action=view&par='.<?=$val?>.'">View Me!</a>
+This takes a value for par from the URL, makes sure it’s safe and creates a link out of it.
+Now, if an attacker submitted:
+http://host/page.php?par=123%26action=edit
+the resulting link would look like:
+<a href="/page.php?action=view&par=123&amp;action=edit">View Me!</a>
+PHP/Apache uses the last occurrence, 
+Apache Tomcat uses the first occurrence,
+ASP/IIS uses all occurrences, etc.
+
+
+
+http request attack 
+to find what methods are using use 
+nmap --script  http-methods vidhvaa.com
+or
+curl -v -X -u http://vidhvaa.com/ 
+
+after that try to change the method to put or delet and trace
+

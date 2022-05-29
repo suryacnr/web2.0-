@@ -1,0 +1,26 @@
+Carriage Return Line Feed (CRLF) Injection is a type of vulnerability that occurs when a
+user manages to insert a CRLF into an application. The CRLF characters represent an end
+of line for many internet protocols, including HTML, and are %0D%0A which decoded
+represent \r\n. These can be used to denote line breaks and when combined with HTTP
+Request / Response Headers, can lead to different vulnerabilities, including HTTP Request
+Smuggling and HTTP Response Splitting.
+HTTP Request Smuggling, this usually occurs when an HTTP request is passed
+through a server which processes it and passes it to another server, like a proxy or firewall.
+Now, CLRF attacks can be even more dangerous when they allow for XSS attacks (see
+the Cross-Site Scripting chapter for more info). In this case, because Twitter filters were
+bypassed, a new response could be returned to the user which included an XSS attack.
+Here’s the URL:
+https://twitter.com/login?redirect_after_login=https://twitter.com:21/%E5%98%8A%\
+E5%98%8Dcontent-type:text/html%E5%98%8A%E5%98%8Dlocation:%E5%98%8A%E5%98%8D%E5%9\
+8%8A%E5%98%8D%E5%98%BCsvg/onload=alert%28innerHTML%28%29%E5%98%BE
+Notice the %E5%E98%8A peppered throughout it. If we take those characters out and actually add line breaks, here’s what the header looks like:
+https://twitter.com/login?redirect_after_login=https://twitter.com:21/
+content-type:text/html
+location:%E5%98%BCsvg/onload=alert%28innerHTML%28%29%E5%98%BE
+CRLF Injection
+39
+%0d%0aContent-Length:%200%0d%0a%0d%0aHTTP/1.1%20200%20OK%0d%0aContent-Type:%20te\
+xt/html%0d%0aContent-Length:%2019%0d%0a%0d%0a<html>deface</html>
+In this case, the %20 represents a space and %0d%0a is a CRLF. As a result, the browser
+received two headers and rendered the second which could have led to a variety of
+vulnerabilities, including XSS. 

@@ -1,0 +1,19 @@
+dom based open redirection:
+
+dom based oopen redirection arrises when the script writes attacker control the data into sink that trigger cross domin navigation
+let url=/https?:\/\/.+/.exec(location.hash)
+    if(url) {
+        location = url[0];
+    } 
+ if this type of coding is used its vulnerable for redirection coz this script is handle in unsafe way
+ now you just type ;
+ https://your-lab-id.web-security-academy.net/post?postId=4&url=https://your-exploit-server-id.web-security-academy.net/ 
+
+ Dom based cookie manuplation vulner:
+
+
+ many sink are largely harmless on ther own but dom based cookie manuplation attack demonstrate how low security can be used as exploit chain for high security attack for eg: if java script document.cookie is used withiut santising first an attacker can manuplate the value of single cookie to arbritary value
+
+ document.cookie = 'cookieName='+location.hash.slice(1);
+ 
+ 

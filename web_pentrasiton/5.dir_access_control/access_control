@@ -1,0 +1,100 @@
+acess control 
+vertical access control means the adminstrator can access and delet or modify the user account but not reqular users cant perporm this accstion
+
+horizontal access control means those who have permistion to access the user account or only allowed eg: bank allowes the user to view transaction 
+or deposite the money only to there own acccount not to athers account
+
+context access control means it does not allowes the user to modefy content and functonlaity of the web page like parameter tamering eg:
+website might prevent user from modefying the content from the shoppig card after they made payment
+
+Go to storage in dev tools in that go to sessionid in that try to change key value tat may be vulnerable to access control 
+in secound chalange if you cant change the key vakue than  in burp change the product id and add the bsket value to 2 eg ;"basketid" = "2"
+you can change the author name to comment in comment section and change the name
+to submit the feedback by other user you should go to dev and delete the contant of userid = hidden and remove them and you can see the userid 
+field  eg: userid = 19 change it to = 2
+
+1.vertical privilege escalation:
+  if a non administrator user account can gain acces to admin page wher they can delet user account then it is vertical privalege
+ For example, a website might host sensitive functionality at the following URL:
+
+https://insecure-website.com/admin ==> if you did get the admin page you can use word list bruteforces
+or even you can get it from robots.txt file 
+if the adminstrator page is not gessable and if url is disclosed in javascript it can be seen by all users
+
+parameter access control :
+when url is get based in login or paramter is visible like this https://insecure-website.com/login/home.jsp?admin=true than user can easly modefy 
+?admin=true to ?admin=false or role=1 to role =2
+
+Broken access control resulting from platform misconfiguration:
+some application may use access control at platform layer to specify certain rules like deany DENY: POST, /admin/deleteUser, managers
+this will deny  the post request in /admin/deletuser
+some website framework use non standerd http-headers than can be used to overwrite the url in orginal request eg: X-Original-URL and X-Rewrite-URL.
+if the website is very carefull in frond end to restrict  access control but it allowes request header to  rewrite than it can be essaly bypassed
+
+if the user allows the restricted page to modefy by some other methods like get put it is also bypassed
+
+k
+2.horizontal privilage escalation :
+	if the user is able to gain access  of another user instant of its own resources or type eg:the employer should ba able to use its own 
+account but if he access other user payment then it is horizontal privilage escalation
+horizontal privilage is also like vertical privilage
+https://insecure-website.com/myaccount?id=123  if the user modefy the id params he can gain access of another user
+in some web site its not possiable to gess instant of number 1,2,3,etc it may be random string However,
+ the GUIDs (Universally unique identifier)belonging to other users might be disclosed elsewhere in the application where users are referenced 
+like user message and review . some time the software detects the user and redirect to login page mith is it still contain some sentive data
+
+3.horizontal and vertical privilage esualtion
+		this is done by only if the user can gain access of administrator by other user and he can delet or modefy 
+
+4.IDOR(inseure direct object referances):
+		if you want to view to some file or document file  you want the referances of the page you can edit the document file and if you can 
+view index.php file or some other file than it is idor execution
+
+
+5.Access control vulnerabilities in multi-step processes
+
+		 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  	

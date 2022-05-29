@@ -1,0 +1,59 @@
+why js eneumeration
+it contains most client side of logic inside the code
+	hard coded 
+	hidden and unprotected resources
+
+js helps you to understand the target appliction better
+it can leads to deep and serious bugs with low probability of duplication
+js enumeration  can be intimidating , especialy you are doing in wrong way
+maybe you jumbs into random js files  wrong file
+
+methodalogy
+browse the entire application  and get all js files
+beautify the js code 
+search for area of focus
+there are many tools that can assist you during this process
+
+simply rightclick and search for view source in page and type ctrl + f .js dont look for jquery look for main js app js 
+browser for certine keywoard in js file like api, internal, url, var=, //,https://,company.com ,location.search, parameters
+
+beautifier.io/ to beautify code so its readable
+api docs?
+
+
+Risky js traits:
+
+build in memmory managment ==> buffer vulnerability
+native seralization (qs, jason) ==> type manuplation
+natural sclable (via eventloop) ==> regsdox
+frequant template ==> sandbox escaping
+flourising npm pacage ==> vulnerable package
+
+finding more url 
+finding more subdomin
+finding more internal domain
+finding sensitive information(like api, token secret token)
+trying  to understand the js code
+outdated js library 
+
+
+tomnumnum
+open the site go to anywebsite and and go to network tap and sort by js file pick any random file and send it to source 
+
+dont now this is correcr way just try for api endpoint
+go to xhr and click initiator and send it source than go back to network and click xhr and click on name eg : in name click for whether and copy and past in console tab by pressing esc key 
+
+set the brake point which you find which helps for post message
+eg: in console 
+windows.postmessage('mail', '*')==>mail can be replace with anything and * is the target which specipy all
+
+use replit
+
+
+use .map in end of the js file to see the map for that file 
+if not always loof for js bunble where it is located
+
+always look for class, id in forms etc in view source page 
+
+
+cat js_files_url_list.txt | parallel -j50 -q curl -w 'Status:%{http_code}\t Size:%{size_download}\t %{url_effective}\n' -o /dev/null -sk

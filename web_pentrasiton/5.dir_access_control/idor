@@ -1,0 +1,55 @@
+what is object referances ?
+key 1 fetches the database record of user 1
+key 2 fetches the database record of user 2
+key 3 fetches the database record for admin
+
+1.horizontol privilage esculation:
+what if the   user1 has got access to key2 and is able retrive user2 data from the database  
+if both user belongs to same catergiry its horizontal privilage 
+	we should find how the website is using user information like user_id=6 you should find this first
+
+2. vertical privilage esculation 
+what if the user1 has got access to key2 is able to retirive admin data from the database
+
+
+insecure direct object referance 
+look for 
+multi tanant system  ==> viewing other business information  
+multi user system ==> viewing other user information
+multi level system
+
+how to look for idors
+
+find the js function to call different kind of functionality
+replace the sequential id in parameter 
+newer do these with prd with an unkown id 
+always make 2 account
+ 
+Types of idors 
+1. typical idor ==> if you are loged in you cannot look for other user information
+2. unauthendicated  idor ==> if you are not loged in you cannot view any information of athers
+3. permission idors ==>  admin can acess all user but normal user cannot 
+
+
+
+idor can occure if attacker can assces or modefy some referance of some object such as files record database account 
+where things go more difficult if the site try to observe and randomize identifier the object referance
+such universal unique identifiers (UUIDs) In this case, the ID might be a 36 character alpha numeric string which is impossible to guess
+in this case one way is create two user account switch between those users so if your trying to access user id uuid create the profile with user A and the user B  try to access that profile with uuid since you now that
+if your try to access uniqe id like invoice id trips etc all identifyed by uuid simlare to the example above 
+the next step is to find where the uuid is leaked for example the tearm based sites can you invite uers B to your tearm if so server responces with uuid  before even they accepts the invitation .thats the one way the site leaks uuid 
+In other situations, check the page source when visiting a profile. Sometimes sites will include a JSON blob for the user which also includes all of the records created by them thereby leaking sensitive UUIDs 
+
+example 1:
+Before the hack, if you logged into Binary.com/cashier and inspected the page HTML, you’d notice an <iframe> tag which included a PIN parameter. That parameter was actually your account ID.
+now if you edit and insert another pin now site will perform new account with validathing password or other credntial.
+if your looking for broken authentication lookout for where credintial are being passed to site this was cought by view sources this can be cought by burp suite 
+if you find some credintial being passed look for where they dont not look encrypted and try to play with it 
+ 
+ example 2:
+
+
+where is the problem 
+the core problem is lack of autherization check before loading the date
+developer missconception
+url is being past to the sever throw post or hidden form field that may not get tampred

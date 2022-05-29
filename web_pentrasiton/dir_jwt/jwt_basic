@@ -1,0 +1,45 @@
+first thing to identify jwt it will start at ey
+there are four ways to bypass jwt 
+1:none alg
+means change the alg : to none and replace the payload 
+ eg:
+ {
+  "typ": "JWT",
+  "alg": "HS256"
+} 
+To {
+  "typ": "JWT",
+  "alg": "none"
+}
+From
+{
+	"exp": 1605687902,
+  "iat": 1605601502,
+  "email": "suryacnr18@gmail.com"
+}
+To
+{
+	"exp": 1605687902,
+  "iat": 1605601502,
+  "email": "surya101ctf@gmail.com"
+}
+NOTE:
+HAS256:(secret hashing Alg)
+RS256:(public/private hasing Alg)
+The most common algorithms for signing JWTs are:
+
+    HMAC + SHA256 (HS256)
+    RSASSA-PKCS1-v1_5 + SHA256 (RS256)
+    ECDSA + P-256 + SHA256 ( ES256)
+
+2. signature not checked
+just remove the signature and edit the payload
+
+3. brute fource  the secret key only if it is hs256
+how to do ?
+
+4. change th algorithm from rs256 to hs256 .this attack can be only done when public key is exposed
+allows an attacker to fourge own token
+how to do ?
+
+

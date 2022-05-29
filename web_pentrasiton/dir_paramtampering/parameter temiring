@@ -1,0 +1,5 @@
+parameter temring can be used to modefy the price prodect quantity or etc can be done in perfermfiled or cookiefiled or get
+
+first you have to go to website and go to the product filed and intersept the traffic and than click on product  in burp search for the price amount 
+if you dont get it click on go until you get it.
+after that you should try to modefy the price amount if you able to modefy than there is parameter tampering

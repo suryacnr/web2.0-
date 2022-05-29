@@ -1,0 +1,30 @@
+first see for what type of strings in cookkie ty basically it may be hex or base64 or md5hash
+A-Z =26
+0-9 =10
++ / = 2
+total=64
+and in the end there will be == its sure its base64
+   
+use cyber chef to bake the string to from hex means hex to binary 
+secound use the reves string
+eg ==QWdeA to AedWQ==
+third use from base64
+
+
+xor for natas11
+ take the cookie and see whether what type of encoding is been used in natas they have been used urldecode with base64 
+ and you will get junk file 
+ 
+
+xor as been using decription in three ways 
+key = adsf
+cipher = UK"..H+..O%...pS.Wh]UZ-..T%.U.hR.^,..^h
+clear text = 
+in xor if you have any two  you will get 1 
+eg: you have cipher and you may get clear text you will not get key value 
+than you have to jshon encode with clear tet 
+eg : array( "showpassword"=>"no", "bgcolor"=>"#ffffff"); like this echo jashonencode(array( "showpassword"=>"no", "bgcolor"=>"#ffffff"))
+than in cyber chef use xor and give the cipher value and the key value of clear text of jashonencoded
+than you will get the repited words take only once repted key
+
+than do base64 you will get the answer

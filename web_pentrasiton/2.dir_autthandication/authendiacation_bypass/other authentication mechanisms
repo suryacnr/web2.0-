@@ -1,0 +1,9 @@
+keep me loogin in or remember me 
+this is simply if the browser close the session. the check box alowes me to remember my password this is stored in presistant cookie .possining this cookie allow as to enter the page  without login the best practices is to the cookie is to impredictable to guess but some website use the uesername and timestap for cookie and some website uses password
+if cookie doesnt use salt and if attacker is able to guess the algoritham it is easy to brute fources cookie value if they did menstation limits to guess.
+how to crack stay login cookie
+first enter your username and password and click the check box stay login
+in burp history you can see the cokkie for stay login 
+after that decode that cokie value and take that value and past it in crackstation.net you will be able to crack the aloritham
+now enter the victum username and try to brute fource the password
+ 

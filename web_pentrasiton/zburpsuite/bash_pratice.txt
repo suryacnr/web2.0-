@@ -1,0 +1,121 @@
+{
+how to use variable and comments
+in two ways you  can use comments 
+#this is comment
+echo 'hello world' #this is coments
+variable
+#after $ all are variable name they may be sys variable or user define variable 
+echo $BASH
+user define
+name=mark 
+echo The name is$name
+}
+{
+how to read user input
+echo "Enter the name :"
+#this is used read from terminal
+read name
+#you can also enter multiple name by
+read name1 name2 name3
+echo "Entered  name : $name "
+echo "names : $name1, name2, name3"
+
+# enter the name in same line
+read -p "username:" user_var
+echo "username: $user_var"
+read -sp "password:" pas_var
+echo "password : $pas_var"
+#enter the array of strings
+echo "enter the names:"
+#-a is an array to denote
+read -a  names
+echo "names ${names[0]}, ${names[1]}"
+
+#enter the read without reply
+echo"enter the name"
+read
+echo "name : $REPLY"
+}
+
+{
+
+	
+How to pass arguments in bash
+#the arguements stores defult in $1 $2 $3 and soo on 
+echo $1 $2 $3 "echo $1 $2 $3"
+#secound method
+args= ("$@")
+echo ${args[0]} ${args[1]}
+#third method
+echo $@
+echo $#
+
+}
+
+{
+#basic syntax
+ IF else statment
+ if [condition]
+ then
+ 	statement
+ fi
+ count = abc
+ #integer commerstion
+ -eq , -ne, -gt, -lt, -ge, -le eg : if [$count -eq 6]
+ #integer commerstion in sybales 
+ <, >, =. ==, !=, -z ==> string is null has zero leanth  eg: if (($count > 9))
+#string commerstion
+ =, ==, !=, if [$count = surya]
+ <, >, if [[$count > "asdb"]]
+#demo
+word = surya
+if [[$word > surya]]
+then
+ echo "condition is true"
+elif [[$word > surya]]
+ echo "dont no"
+else 
+echo " condition is false"
+fi
+}
+{
+ File test operaters 
+ echo -e "enter the filename : \c"
+ or echo -n " enter the filename"
+ read file_name
+ # -e is used to find whether file is there or not
+ # -f is regulare file or not -d for directory -s to find empty or not -r -w -x read  write and execute  permistion 
+ if [-e $filename ]
+ then 
+ echo $filename found
+ else
+  echo $filename not found
+  
+ fi
+}
+
+{
+How to append end of text file
+}
+
+
+{
+how to use while loop to read file 
+#! /bin/bash
+#you can use cat comant
+cat sample.py |whilw read r
+do 
+echo $r
+done
+#read from after done
+while read r
+do
+echo $r
+done < /root/sample.py
+#for more complex
+#space must me there after =
+while IFS= read -r line
+do
+echo $line
+done < /root/sample
+}

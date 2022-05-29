@@ -1,0 +1,36 @@
+ sql inject is used to attack the database of the server by injcting simple ($select title, text from news where id=10 or 1=1 )
+admin and 1=1 , admin or 1=1 using this and or operater and commends are used to comment out after the payloads # . --+, -- 
+
+sql inject attack can be divided into three parts 
+1.inband ==> is extracted using the same channel the most straight forword attack 
+
+2.outband ==> is  extracted using the diffrent channel 
+
+3.blind ==> ther is no transfer of data the tester able to reconstract the data  by sending particular requset and obesrving th data in dbserver 
+
+the sql query is injected correctly if it gives error about the query it is esay for an attacker to correct the synatans if the application hidded
+the information than the attacker must be able to reverces enginer
+
+The 5 commen technique to exploit the sql injection 
+1.union operation 
+
+2. boolean 
+
+3.error based 
+
+4.out band 
+
+5.time dely  
+
+Detection Techniques:
+ first we want to find where the application is talking to Db server like
+authendication form 
+search enginne 
+e-commerces website
+the first simple step is add " or ' or ; this is used as sql string terminator if web doesnt use fillter it gives query error.secound is to end the
+statment if the web doesnot filter anything it gives query error. the end statment are ( -- or /**/ or # etc) and also sql stament like AND OR can 
+used to modefy the query 
+2.the simple step but very effective technique to simple type '28274782'if you get error message like insert string but excpected  int
+some times information may be hidden in sources code like in html cmmend and javascript code you may not be to luck to get so much information 
+you will be simple get 504 error or 404 so you should use blind sql attack
+it is very import to test each field separately in brutforce only one variable should vary while other should be constant     

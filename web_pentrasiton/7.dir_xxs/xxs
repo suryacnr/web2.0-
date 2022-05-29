@@ -1,0 +1,74 @@
+There are mainly three types of xss :
+1.replacted xss
+2.stored xss
+3.DOMbased xss
+three things are used to not to inject xss are:
+encoding 
+< == this will be encoded in &lt
+filters
+<script> == script> this will elmnate the < sym
+validation
+<script> ==  this will remove the <script>
+sanitizastion 
+combination all 
+if they filter you  on client side u can be easly bypass that filter
+by using hello"onmouseiver="alert('xss');
+or <svg/onload=alert(1+2)>
+if they filter " or ' you can use
+string(/omouseover=/alrt("xss");
+or string.formcharcode(72.09.97.24)
+or you can use atob()== base64 into stringeg:atob("BAXZw") and btoa()==into base64 eg:btoa("hello") for base64 encoding and decoding
+than you can use ` instad of "
+
+1.REPLACTED XSS:
+    this is simple first should enter the worlds in parameters if it is replacted there is replacted xss this is only one client side 
+
+2.STORED XSS:
+		this is bit diffiult as like replacted you should enter the words.if it is stored in database like comment session if you can 
+trigger xss than it is stored based xss 
+
+ 
+		
+3.DOMBASED XSS:
+
+
+
+
+
+
+the filters can be bypassed using | and & using this 
+eg : <script>alert('xss')</script> in this case if they can use filter to remove you can use | like this <script>|<script>alert('xss')</script>
+or you can use &symbile 
+eg2:
+ you can use \ escape character <iframe src = "javascript:alert('xss')"> you can use the filters "<iframe src = \"javascript:alert('xss')\">
+
+
+ look for "var" in source code and search for it than try to triger what is going on  than try to change user agenta 
+try to uncomment the things in source code 
+		
+https://jsfiddle.net/
+if they dont allow any special charater or url encoding just make iframe option 
+<iframe src ="https://xyz.com/id?id=javascript:name" name ="<svg/onload=alert(0)> ">
+</iframe>
+what is htmlentity
+
+Goal is to determine what is being filtered
+1.are the basic allwoed "'<> allowed? what if you try them  by themself , diff begivour?
+2.ls "on[]=" filterd or is it just the commen 'onerror','onmouseover','onclick' etc ? what about onxxx
+3. how do they handle unicode, double encoding, unusual encoding?
+
+Tips and Tricks:
+This is for block list waf:
+inspect element and view source are different and view source & burp responces are same 
+search for replaction than try htmlthan do for double encoding 
+allways try to double encode eg:%2525 than do html injection like <h1>, <b>, <s>
+1. if they block you for special characters like secipt than try for img, a , svg , than try for onload if they block you use onx ,onxxxx becouse  some waf will block you when you use onerror , onmouseover="" in these case if they forget to block  eg: new event handlers etc than you can bypass if you dont know new handles than try for google documentation mozila 
+
+white list fire wall
+try for unicode encoding for backend waf .best fit maping 
+try for sending emoji see what happens coz backend sufers
+use comments first<!
+if application uses python you can use (,) comma to sperat  that why  is this happing coz of paraser how it works
+if there is any hidden parameter take that search in url parameter some times work as replected
+after that go to knoxss and xsshunter in website 
+you can practise in they own website  eg: cloudfare.com/<xss onfocus=alert('xss')> 

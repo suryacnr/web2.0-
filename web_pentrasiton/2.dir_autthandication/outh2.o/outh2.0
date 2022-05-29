@@ -1,0 +1,41 @@
+oauth site allow secure authorization in a simple and standard method from web, mobile and desktop applications.
+in other words you can login or sigup using facebook or google twiter this is called as oauth
+in outh terms there are atcually resources owner client resources server
+there are number or http request handled  and facilitate you as a resources owner instructing the resources server and allow the client to access your personal information as defined by scoup
+scoup are like permission and they control and access to specfic piece of information 
+for example facebook include email pubic_profile, user_friends etc so if you grand permission to email soup it can only access facebook information not your friends profie etc.. 
+step:1 
+outh process will all begin in user browser and user click the login with google 
+ facebook with GET requset and the url will be like www.mazzady.com/outh/facebook
+the site will responces with 302 redirect which will instruct your browser to perporm GET request to url defined location header 
+https://www.facebook.com/v2.0/dialog/oauth?client_id=123 &redirect_uri=https%3A%2F%2Fwww.example.com%2Foauth%2Fcallback &response_type=code&scope=email&state=XYZ
+Step2:
+There are couple important piece of the url. First client_id identifices which site your coming from Secound The redirect url tells that where should be navigete you after you permestion to the site  to access the information defined by the soucp  also included in url 
+responces type tell that what should be return that may be token or code 
+These two difference are important 
+				1.The code is used by permited site (the Client) to call back the resource server (the facebook) 
+				2.The Token the requesting and receiving the token in first stop would provide provide imdiate access to resources server to query the account information as long as Token was valied
+The state value act as CSRF production. The Requesting site(client) should request in orginall call to Resources server and it should return the value to ensure that orginal request by the site and b) the response has not be tampered with.
+Step 3:
+ if the user accepts oauth dilogbox pop and grand client permission to the resources server or facebook it will responce with 302 redirect back to the site it include code or url depans on the responce type  url 
+Step 4: 
+	   The browser will make GET request to the site using state code and value provided by the resources server 
+Step 5:
+	   The site should validate the state value to ensure to process wasnt tampereted with and use the code along with client server to make get form resource server for token
+STEP6: 
+	  The resources server responces in the site with token which permits the site with api call to facebook and access the scope which you allowed in step 3
+	  Now with whole proccess in the mind after you have authorsized to site to access the resources server.if you wist the url from step 2 agin the whole process will complety done in background with  required no user intraction 
+	  The one pontential vunlerability is to look for oauth is to steal token with resources server Doing so allwo an attacker to access the resources server behalf vitum accessing whatever was permeted by the scope. Based on the authore resourch able to manuplate redirecr_url and redirecr_token isntant of code
+so for the first step to test in step 2 so when you get redirected to the resource modefy the responces_type see if the resources server will return the token so if does modefy the redirected url so conform that how site was configured 
+some oauth resources serve may missconfigured them self and permite them self like www.mazzady.ca, www.mazzady.com to www.mazzady.com@attack.com
+In first example adding .ca actually change the domine of the site so if you can  do something simlar to purchase the domin token would have send to the server.
+In the secound example adding @ changes the url agin it things that first half is username and password and seound to attacker.com
+		if the user grand permistion to site. By revisiting with malicius url with modefy responces_type with redirected url the resources server regonise that user as grand permission and return token automaticaly to your server with out any intraction from them For example, via a malicious <img> with the src attribute pointing to the malicious URL. 
+	Now you cant redirect to you server you can see resource sever will accept different subdomin  like test.example.com and path like example.com/attack if the url redirection is not strick than resource server will send the token the url you control now you have to combine another vulnerability to get the token open redirection remote code and xss 
+	  
+
+
+
+
+
+

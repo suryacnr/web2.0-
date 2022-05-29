@@ -1,0 +1,18 @@
+server side vulnerablity can arrices when the server make the request instant of me or hacker eg: anywev.com/params=http://bing.com
+how to hunt for ssrf attack
+you have to find any parameters that having external entity like url redirection eg :anyweb.com/index.php/uri= http://bing.com
+
+you have to search in burp for keyword like url,uri,reset
+if you have website you see log files than you cna see how is seeing yours website and what they are seraching  if some other website is vulnerable 
+to ssrf than you can use they website ip instant of your ip if it is vulnerable you see the website ip instant of your ip
+
+big chalange is you dont have log file analysire 
+how can you check the server is making request or not to the vulnerable website
+for that you have to go to google and search for what is my ip or you have to searech for expresesvpn so they will give your ip addres so if testphp 
+website vist this website they will give testphp website if anywebsite wisits that the expresesvpn they will give anywebsite ip address
+ 
+ goole dorking site:https://play.esea.net/ ext:php.
+ ssrf arises in two case
+ 1. the application perform a requests to a server
+ 2.you control full or part of the server's ip hostname
+ %E2%80%%AE

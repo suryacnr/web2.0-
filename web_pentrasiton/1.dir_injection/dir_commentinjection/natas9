@@ -1,0 +1,25 @@
+it very easy find for parmaeter and search for test if it reflect than try for commend injection 
+eg: test ; ls or test | ls 
+this are the two ways for commend injection
+or use sub commend aa $(aa) or a $(ls) they did likes this grep - i 
+they allword us to view the /etc/ natas folder 
+so just simple did like this if a contain in the directory we are giving 
+a /etc/natas_webpass/natas11
+
+next try to find what characters are allowed and which are not allowed for that simple intercept proxy and
+creat the payload like 00 to ff using % in frent of that eg: %0A and also use url decode  this url decode must be (on and off) and then add filter
+iteam as an illegal character or login failed  in burp 
+this is will work only if the programer as blacklisted the character instant use white list
+
+the third way is to use sub shell eg: echo test you can sub shell this by using echo te$(hello)st this will give tehellost as output
+there is actuall try boolean statment like $(grep 2 /etc/natas_webpass/natas17)sclap if 2 exits in natas folder it will not return any thing if 2
+doesnt exits it will return sclap
+so the password contain 32 char you cant brute force becouse it jumbled character 
+ so we can use regeas $(grep -E ^a.*$ /etc/natas_webpass/natas17)sclap ==> -E turn into regas  ^a is starting word .* is next word $ untill end of
+statment in grep comment
+finally the password contains 32char ans  you should brute force and find the word which starts will first letter . you cant use brute force for 32cha
+so we have created python coding for that 
+
+
+yous grep -R . will return all files for full output of that page
+or you can use while read line ; do 

@@ -1,0 +1,40 @@
+test for week ciphers:
+	nmap -p 443 --script=ssl-enum-ciphers humo.be
+than test for Trace method 
+change get into post some time web firewalls dont no what to do with that than you can bypass filters 
+
+gather server information
+
+nc -C humo.be 80
+HEAD / HTTP/1.0
+HOST: HUMO.BE
+nc -C humo.be 22
+nc -C humo.be 443
+nmap -sV humo.be
+nmap --script=http-robots.txt humo.be
+Fpr more nmap script /usr/local/share/scripts
+
+bonuse use nikto nikto -h humo.be
+test for shellshock  in user agent
+user_agent=(){42;} ; echo ; /usr/bin/id
+not only you can test user_agent but you van also test any where in request but you should not test in Get or post and host other than that you can test any where but user_agent is safe to test
+
+spider the website : classic spider only find linked url but we should find unlinked url forced browsing will do that and brute force 
+robots.txt check for that because spider will not notice that
+waplizer exits in two form in webbrowser and tecnlogy in zap
+dirbuster and forces browsing find unlinked contant 
+wget used for spider but it doesnt do much 
+wget -r https://www.humo.be/ -l 3
+cewl is best to creat your own word list
+
+gogle search for directory browsing
+site: humo.be intitle:"index of""last modefied"
+https://www.exploit-db.com/google-hackig-database/
+search for cves 
+http://cve.miter.org/cgi-bin/cvekey.cgi?keyword=leakage
+
+in authendication you can try bruteforce username and password but they will use account lockout but
+actualy we are using password spraing wich means one password will different email address 
+next step they will lockout ip address but criminals use bot to login so this attempet fails
+pentesters will use burp with proxy cannon black hill 
+

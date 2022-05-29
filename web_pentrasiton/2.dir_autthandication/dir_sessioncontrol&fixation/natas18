@@ -1,0 +1,16 @@
+first try to fuzz the phpseesion id or session token eg: phpsession_id = 545
+for next level go for sequancer and then it will catch phpsessionid automatically than give start live capture it will analyzie 1000 of phpsessionid
+than try to decode using cyberchef first use base64 if it is not proper string than try for hex than you will get a proper decoded value eg: 545admin
+now fuzz the value use 1 to 1000 and suffex the admin than grep the comment in webpage as your logged in  and than add ascii hex 
+after that if you fuzz you will get admincookie value
+level 20 
+first try to find which charcter are filter and which are not 
+in burp use hex decimal chaecter 00 to FF max char=2 than add prefix % than use url decode u can try  with or without url decode  last you should use
+grep comment to include in the webpage that gives the mess
+if you did get any thing you can use fuzz db  which includes all type of attack 
+first step or requlare methodalogy is:
+try to fuzz the the get paramter like GET /?$admin$=$admin$/HTTPS/ ==> use gess get parameter in burp  to use this 
+level 21 
+befor trying this you form value should change or replact in the cookie vlaue after that 
+you can try to add extra value in the login page or some other form page 
+eg: username = surya& password = surya &test =123

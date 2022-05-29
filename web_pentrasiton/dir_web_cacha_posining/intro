@@ -1,0 +1,13 @@
+how it means to work
+eg: if the website see request for first time in server it will take copy the website which will be given to other user if they vist same web within short will 
+this is based on time user
+after time expries agin the request will send to server for fresh copy that page 
+if the attacker send the malicius code than it will be saved in copy of that site 
+the website will identify with cache key are comenly get or post request line and the website
+		
+
+		cache posing methodoly
+1.identify unkeyed input probebly header or cookie  using param miner in burp pro or free
+2.inburp you can see like cache_control :public ,or no-cache
+the browser will liee to you so try using param mine which identify the hidden headers
+3.the age and maz-age will take together and sepecify the exact what sec the cache expire

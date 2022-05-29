@@ -1,0 +1,3 @@
+To product lfi and rfi you should use allow_url includes = off in php config file 
+and allow_url_fopen = off 
+to attack just use pttps://natas7.natas.labs.overthewire.org/index.php?page=https://google.com

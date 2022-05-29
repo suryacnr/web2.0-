@@ -1,0 +1,28 @@
+google has everything you need indexed. There are lots of queries you could search for, however here are some popular search queries: (don't forget to try different languages!)
+
+inurl:responsible disclosure
+
+"report security vulnerability"
+
+"vulnerability disclosure"
+
+"powered by bugcrowd" -site:bugcrowd.com
+
+"powered by hackerone" "submit vulnerability report"
+
+indesc:bug bounty|vulnerability disclosure
+
+inurl: bug bounty
+
+white hat program
+
+"vulnerability reporting policy"
+
+inurl:responsible-disclosure-policy
+https://www.disclose.io/
+
+
+the main thing is to find hidden information 
+in burp you can to engament tools than go for contant disscovery 
+you can use cewl to creat word list from the website than you can creat word list than use it contant discovery managment 
+or you can use like this eg: GET /?$$=$$ 

