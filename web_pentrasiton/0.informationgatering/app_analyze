@@ -1,0 +1,16 @@
+we should start with 1.open ports and services(defualt creds on service and service level exploit)
+2.web hosting software (DEFAULT CREDS, web exploit, web server misconfigure)
+3.application framework
+4.application custome code
+5.application library
+6.integration
+
+1. whatrun and waplyzer and comment line tool webanalyze 
+2.find cve and misconfiguration 
+  known valunerability
+  framework login
+  Default creds
+  related to non-cutome code(these are usually platform,application server,framework CMS library, misconfiguration)
+  
+ for common cve we use nuclie,gofigerprint,retire.js,vulners burp extend sn1per,jaeles scanner
+  3. port scan fast rustscan and naadu simple 
